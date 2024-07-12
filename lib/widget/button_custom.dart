@@ -48,7 +48,7 @@ class ButtonCustom extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: InkWell(
                 borderRadius: BorderRadius.circular(20),
-                onTap: onTap(),
+                onTap: () => onTap(),
                 child: (Container(
                   width: isExpand == null ? null : isExpand! ? double.infinity : null,
                   padding: const EdgeInsets.symmetric(
