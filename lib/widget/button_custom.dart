@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/config/app_color.dart';
 
 class ButtonCustom extends StatelessWidget {
-
   const ButtonCustom({
-    super.key, 
+    super.key,
     required this.label,
     required this.onTap,
     this.isExpand,
@@ -33,7 +32,11 @@ class ButtonCustom extends StatelessWidget {
                   ),
                 ],
               ),
-              width: isExpand == null ? null : isExpand! ? double.infinity : null,
+              width: isExpand == null
+                  ? null
+                  : isExpand!
+                      ? double.infinity
+                      : null,
               padding: const EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 10,
@@ -50,7 +53,11 @@ class ButtonCustom extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 onTap: () => onTap(),
                 child: (Container(
-                  width: isExpand == null ? null : isExpand! ? double.infinity : null,
+                  width: isExpand == null
+                      ? null
+                      : isExpand!
+                          ? double.infinity
+                          : null,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
                     vertical: 12,
