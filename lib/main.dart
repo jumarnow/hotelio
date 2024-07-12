@@ -21,14 +21,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme(),
-        scaffoldBackgroundColor: AppColor.backgroundScaffold,
-        primaryColor: AppColor.primary,
-        colorScheme: const ColorScheme.light(
-          primary: AppColor.primary,
-          secondary: AppColor.secondary,
-        )
-      ),
+          textTheme: GoogleFonts.poppinsTextTheme(),
+          scaffoldBackgroundColor: AppColor.backgroundScaffold,
+          primaryColor: AppColor.primary,
+          colorScheme: const ColorScheme.light(
+            primary: AppColor.primary,
+            secondary: AppColor.secondary,
+          )),
       routes: {
         '/': (context) {
           return FutureBuilder(
@@ -37,17 +36,17 @@ class MyApp extends StatelessWidget {
                 if (snapshot.data == null || snapshot.data!.id == null) {
                   return const IntroPage();
                 } else {
-                  return HomePage();
+                  return const HomePage();
                 }
               });
         },
         AppRoute.intro: (context) => const IntroPage(),
-        AppRoute.home: (context) => HomePage(),
-        AppRoute.signin: (context) => const SigninPage(),
-        // AppRoute.detail: (context) => const IntroPage(),
-        // AppRoute.checkout: (context) => const IntroPage(),
-        // AppRoute.checkoutSuccess: (context) => const IntroPage(),
-        // AppRoute.detailBooking: (context) => const IntroPage(),
+        AppRoute.home: (context) => const HomePage(),
+        AppRoute.signin: (context) => SigninPage(),
+        AppRoute.detail: (context) => const IntroPage(),
+        AppRoute.checkout: (context) => const IntroPage(),
+        AppRoute.checkoutSuccess: (context) => const IntroPage(),
+        AppRoute.detailBooking: (context) => const IntroPage(),
       },
     );
   }
