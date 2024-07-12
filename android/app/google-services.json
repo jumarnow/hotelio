@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "737157204775",
+    "project_id": "hotelio-126c2",
+    "storage_bucket": "hotelio-126c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737157204775:android:8e99b3514feacf84ffb702",
+        "android_client_info": {
+          "package_name": "com.example.hotelio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC24daW0fDFBVDRZBdeBRdaRK1SWFOZgYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737157204775:android:5b8bf159110eaa7dffb702",
+        "android_client_info": {
+          "package_name": "com.example.my"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC24daW0fDFBVDRZBdeBRdaRK1SWFOZgYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737157204775:android:e6d9b865e926fb39ffb702",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC24daW0fDFBVDRZBdeBRdaRK1SWFOZgYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

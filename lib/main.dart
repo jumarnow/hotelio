@@ -4,12 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_route.dart';
 import 'package:myapp/config/session.dart';
+import 'package:myapp/firebase_options.dart';
 import 'package:myapp/model/user.dart';
 import 'package:myapp/page/home_page.dart';
 import 'package:myapp/page/intro_page.dart';
 import 'package:myapp/page/signin_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
