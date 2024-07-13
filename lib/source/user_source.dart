@@ -22,7 +22,7 @@ class UserSource {
       } else if (e.code == 'wrong-password') {
         response['message'] = 'Wrong Password';
       } else {
-        response['message'] = 'Sign In Failed';
+        response['message'] = e.message;
       }
     }
     return response;
@@ -30,7 +30,7 @@ class UserSource {
 
   static Future<User> getWhereId(String id) async {
     DocumentReference<Map<String, dynamic>> ref =
-        FirebaseFirestore.instance.collection('users').doc(id);
+        FirebaseFirestore.instance.collection('user').doc(id);
     DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
     return User.fromJson(doc.data()!);
   }
