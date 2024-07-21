@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_route.dart';
 import 'package:myapp/config/session.dart';
@@ -12,12 +13,13 @@ import 'package:myapp/page/signin_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  initializeDateFormatting('en_US');
 
   runApp(const MyApp());
 }
@@ -45,12 +47,12 @@ class MyApp extends StatelessWidget {
                 if (snapshot.data == null || snapshot.data!.id == null) {
                   return const IntroPage();
                 } else {
-                  return const HomePage();
+                  return HomePage();
                 }
               });
         },
         AppRoute.intro: (context) => const IntroPage(),
-        AppRoute.home: (context) => const HomePage(),
+        AppRoute.home: (context) => HomePage(),
         AppRoute.signin: (context) => SigninPage(),
         AppRoute.detail: (context) => const IntroPage(),
         AppRoute.checkout: (context) => const IntroPage(),

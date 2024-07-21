@@ -13,6 +13,7 @@ class UserSource {
       response['success'] = true;
       response['message'] = 'Sign In Success';
       String uid = credential.user!.uid;
+      
       User user = await getWhereId(uid);
       Session.saveUser(user);
     } on auth.FirebaseAuthException catch (e) {
@@ -22,7 +23,7 @@ class UserSource {
       } else if (e.code == 'wrong-password') {
         response['message'] = 'Wrong Password';
       } else {
-        response['message'] = e.message;
+        response['message'] = 'Login Failed';
       }
     }
     return response;
@@ -30,8 +31,9 @@ class UserSource {
 
   static Future<User> getWhereId(String id) async {
     DocumentReference<Map<String, dynamic>> ref =
-        FirebaseFirestore.instance.collection('user').doc(id);
+        FirebaseFirestore.instance.collection('User').doc(id);
     DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
+    
     return User.fromJson(doc.data()!);
   }
 }
