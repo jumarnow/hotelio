@@ -5,6 +5,7 @@ import 'package:myapp/config/app_asset.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_format.dart';
 import 'package:myapp/config/app_route.dart';
+import 'package:myapp/config/session.dart';
 import 'package:myapp/controller/c_nearby.dart';
 import 'package:myapp/model/hotel.dart';
 
@@ -250,13 +251,29 @@ class NearbyPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              AppAsset.profile,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(16, 16, 0, 0),
+                items: [
+                  const PopupMenuItem(value: 'Logout', child: Text('Logout')),
+                ],
+              ).then((value) {
+                if (value == 'Logout') {
+                  Session.clearUser();
+                  Navigator.pushNamed(context, AppRoute.signin);
+                }
+              });
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.asset(
+                AppAsset.profile,
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(

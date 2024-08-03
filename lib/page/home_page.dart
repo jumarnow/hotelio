@@ -5,6 +5,7 @@ import 'package:myapp/config/app_color.dart';
 import 'package:myapp/controller/c_home.dart';
 import 'package:myapp/page/history_page.dart';
 import 'package:myapp/page/nearby_page.dart';
+import 'package:myapp/widget/coming_soon.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -25,10 +26,8 @@ class HomePage extends StatelessWidget {
           return NearbyPage();
         } else if (cHome.indexPage == 1) {
           return const HistoryPage();
-        } else if (cHome.indexPage == 2) {
-          return const Center(child: Text('Payment'));
         } else {
-          return const Center(child: Text('Reward'));
+          return const ComingSoon();
         }
       }),
       bottomNavigationBar: Obx(() {

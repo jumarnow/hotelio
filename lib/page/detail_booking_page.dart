@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:myapp/config/app_asset.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_format.dart';
-import 'package:myapp/config/app_route.dart';
-import 'package:myapp/controller/c_user.dart';
 import 'package:myapp/model/booking.dart';
-import 'package:myapp/model/hotel.dart';
-import 'package:get/get.dart';
-import 'package:myapp/source/booking_source.dart';
-import 'package:myapp/widget/button_custom.dart';
 
 class DetailBookingPage extends StatelessWidget {
   DetailBookingPage({super.key});
