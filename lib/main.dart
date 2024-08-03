@@ -7,6 +7,9 @@ import 'package:myapp/config/app_route.dart';
 import 'package:myapp/config/session.dart';
 import 'package:myapp/firebase_options.dart';
 import 'package:myapp/model/user.dart';
+import 'package:myapp/page/checkout_page.dart';
+import 'package:myapp/page/checkout_success_page.dart';
+import 'package:myapp/page/detail_booking_page.dart';
 import 'package:myapp/page/detail_page.dart';
 import 'package:myapp/page/home_page.dart';
 import 'package:myapp/page/intro_page.dart';
@@ -56,9 +59,9 @@ class MyApp extends StatelessWidget {
         AppRoute.home: (context) => HomePage(),
         AppRoute.signin: (context) => SigninPage(),
         AppRoute.detail: (context) => DetailPage(),
-        AppRoute.checkout: (context) => const IntroPage(),
-        AppRoute.checkoutSuccess: (context) => const IntroPage(),
-        AppRoute.detailBooking: (context) => const IntroPage(),
+        AppRoute.checkout: (context) => CheckoutPage(),
+        AppRoute.checkoutSuccess: (context) => CheckoutSuccessPage(),
+        AppRoute.detailBooking: (context) => DetailBookingPage(),
       },
     );
   }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:myapp/config/app_asset.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_format.dart';
+import 'package:myapp/config/app_route.dart';
 import 'package:myapp/controller/c_user.dart';
 import 'package:myapp/model/booking.dart';
 import 'package:myapp/model/hotel.dart';
@@ -60,7 +61,7 @@ class DetailPage extends StatelessWidget {
         bottomNavigationBar: Obx(() {
           return bookedData.id == ''
               ? bookingNow(hotel, context)
-              : viewReceipt();
+              : viewReceipt(context);
         }),
         body: Container(
           decoration: const BoxDecoration(
@@ -109,7 +110,7 @@ class DetailPage extends StatelessWidget {
         ));
   }
 
-  Container viewReceipt() {
+  Container viewReceipt(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -130,7 +131,13 @@ class DetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: InkWell(
               borderRadius: BorderRadius.circular(20),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoute.detailBooking,
+                  arguments: bookedData,
+                );
+              },
               child: const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 36,
@@ -178,7 +185,12 @@ class DetailPage extends StatelessWidget {
               ],
             ),
           ),
-          ButtonCustom(label: 'Booking Now', onTap: () {}),
+          ButtonCustom(
+              label: 'Booking Now',
+              onTap: () {
+                Navigator.pushNamed(context, AppRoute.checkout,
+                    arguments: hotel);
+              }),
         ],
       ),
     );

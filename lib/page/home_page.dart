@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:myapp/config/app_asset.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/controller/c_home.dart';
+import 'package:myapp/page/history_page.dart';
 import 'package:myapp/page/nearby_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
         if (cHome.indexPage == 0) {
           return NearbyPage();
         } else if (cHome.indexPage == 1) {
-          return const Center(child: Text('History'));
+          return const HistoryPage();
         } else if (cHome.indexPage == 2) {
           return const Center(child: Text('Payment'));
         } else {
